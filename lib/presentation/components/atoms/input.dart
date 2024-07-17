@@ -2,21 +2,26 @@ import 'package:flutter/material.dart';
 import 'package:profinder/common/theme.dart';
 
 enum InputType {
-  text,
-  mail,
-  password,
-  area,
+  text, // Champ de texte simple
+  mail, // Champ pour adresse email
+  password, // Champ pour mot de passe
+  area, // Zone de texte multi-lignes
 }
 
 class Input extends StatefulWidget {
-  final InputType type;
-  final String label;
-  final TextEditingController? controller;
-  const Input(
-      {super.key, required this.type, required this.label, this.controller});
+  final InputType type; // Type de champ à afficher
+  final String label; // Libellé du champ
+  final TextEditingController?
+      controller; // Contrôleur pour gérer les données du champ
+  const Input({
+    super.key,
+    required this.type,
+    required this.label,
+    this.controller,
+  });
 
   @override
-  State<Input> createState() => InputState();
+  State<Input> createState() => InputState(); // Crée l'état du widget Input
 }
 
 class InputState extends State<Input> {
@@ -46,16 +51,20 @@ class InputState extends State<Input> {
         );
       case InputType.area:
         return Container(
-          color: contentColor,
+          color: contentColor, // Couleur de fond de la zone de texte
           child: TextField(
-            style: textStyle.copyWith(color: lightContentColor),
-            textAlign: TextAlign.start,
-            keyboardType: TextInputType.multiline,
-            maxLines: 4,
-            controller: widget.controller,
-            decoration: inputStyle,
+            style: textStyle.copyWith(
+                color: lightContentColor), // Style du texte dans la zone
+            textAlign: TextAlign.start, // Alignement du texte
+            keyboardType: TextInputType
+                .multiline, // Type de clavier pour permettre plusieurs lignes
+            maxLines: 4, // Nombre maximum de lignes affichées
+            controller: widget.controller, // Contrôleur du champ
+            decoration: inputStyle, // Style de décoration du champ
           ),
         );
+      default:
+        return Container(); // Par défaut, retourne un conteneur vide (peut être personnalisé)
     }
   }
 }

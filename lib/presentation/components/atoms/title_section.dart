@@ -5,26 +5,31 @@ import 'package:profinder/presentation/components/atoms/custom_text.dart';
 class TitleSection extends StatelessWidget implements PreferredSizeWidget {
   const TitleSection(this.text, {super.key});
 
-  final String text;
+  final String text; // Texte à afficher dans la section de titre
 
   @override
-  Size get preferredSize => const Size.fromHeight(60);
+  Size get preferredSize =>
+      const Size.fromHeight(60); // Taille préférée de la section
 
   @override
   Widget build(BuildContext context) {
-    // return a text with a little line below it
-    // container with text and line with absolute position ing
+    // Retourne une colonne contenant le texte et une ligne en dessous
+
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment:
+          CrossAxisAlignment.start, // Alignement du contenu à gauche
       children: [
-        Customtext(text: text, type: TextType.title),
-        const SizedBox(height: 10),
+        Customtext(
+            text: text,
+            type: TextType.title), // Utilise le texte en tant que titre
+        const SizedBox(height: 10), // Espace vertical de 10 pixels
         Container(
-          height: 4,
-          width: 100,
+          height: 4, // Hauteur de la ligne
+          width: 100, // Largeur de la ligne
           decoration: BoxDecoration(
-            color: contentColor,
-            borderRadius: BorderRadius.circular(radius),
+            color: contentColor, // Couleur de la ligne
+            borderRadius:
+                BorderRadius.circular(radius), // Bord arrondi de la ligne
           ),
         ),
       ],

@@ -18,13 +18,13 @@ class ComponentsView extends StatelessWidget {
           const SizedBox(height: 24.0),
           const TitleSection('Text Fields'),
           _buildTextFieldExamples(),
-          // Add more sections for other components
+          // Ajoutez d'autres sections pour les autres composants ici
         ],
       ),
     );
   }
 
-  Widget _buildButtonExamples() {
+  static Widget _buildButtonExamples() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -46,7 +46,7 @@ class ComponentsView extends StatelessWidget {
     );
   }
 
-  Widget _buildTextFieldExamples() {
+  static Widget _buildTextFieldExamples() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [

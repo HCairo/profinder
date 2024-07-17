@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:profinder/presentation/components/layout/content_wrapper.dart';
 import 'package:profinder/presentation/components/atoms/title_section.dart';
-import 'package:profinder/presentation/views/settings/setting_row.dart'; // Import the new SettingRow widget
+import 'package:profinder/presentation/views/settings/setting_row.dart'; // Import du widget SettingRow
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
@@ -14,15 +14,18 @@ class SettingsScreen extends StatelessWidget {
       child: SafeArea(
         child: ContentWrapper(
           children: [
-            const TitleSection('Settings'),
-            const SizedBox(height: 25),
+            const TitleSection('Settings'), // Section de titre "Settings"
+            const SizedBox(height: 25), // Espace vertical fixe de 25 pixels
+
+            // Ligne de paramètre pour les notifications push
             SettingRow(
-              title: 'Push Notifications',
+              title: 'Push Notifications', // Titre de la ligne
               actionWidget: Switch(
                 value:
-                    false, // Replace with your logic for managing notifications
+                    false, // Valeur du switch (à remplacer par votre logique pour gérer les notifications)
                 onChanged: (newValue) {
-                  // Implement logic to toggle notifications
+                  // Fonction appelée lorsqu'on change la valeur du switch
+                  // Implémentez ici la logique pour activer ou désactiver les notifications
                 },
               ),
             ),

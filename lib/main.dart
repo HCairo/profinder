@@ -15,20 +15,23 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Pro Finder',
+      title: 'Pro Finder', // Titre de l'application
       theme: ThemeData(
-        // Define your theme here, or import it from a common theme file
+        // Définition du thème de l'application
         colorScheme: ColorScheme.fromSwatch(
-          primarySwatch: Colors.red,
-          backgroundColor: Colors.white,
+          primarySwatch: Colors.red, // Couleur principale de l'application
+          backgroundColor: Colors.white, // Couleur d'arrière-plan
         ),
       ),
       routes: {
-        componentsRoute: (context) => const ComponentsView(),
-        authRoute: (context) => const AuthScreen(),
-        appRoute: (context) => const AppLayout(),
+        // Définition des routes de l'application
+        componentsRoute: (context) =>
+            const ComponentsView(), // Route pour ComponentsView
+        authRoute: (context) => const AuthScreen(), // Route pour AuthScreen
+        appRoute: (context) => const AppLayout(), // Route pour AppLayout
       },
-      home: const SplashScreen(),
+      home:
+          const SplashScreen(), // Page d'accueil de l'application, SplashScreen au démarrage
     );
   }
 }
