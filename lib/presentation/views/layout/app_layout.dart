@@ -14,6 +14,7 @@ class _AppLayoutState extends State<AppLayout> {
 
   final Map<int, Widget> _bodyViews = {
     0: ProsView(), // Vue pour l'index 0, affiche ProsView()
+    // ignore: prefer_const_constructors
     1: SettingsScreen(), // Vue pour l'index 1, affiche SettingsScreen()
   };
 

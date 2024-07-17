@@ -1,4 +1,3 @@
-// ignore: unused_import
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
@@ -103,16 +102,18 @@ class _ProsDetailsState extends State<ProsDetails> {
   }
 
   void _submitRating() async {
-    const apiUrl = 'https://qcqc.fr/profs/?list=votes';
+    const apiUrl = 'https://qcqc.fr/profs/';
 
     try {
       final response = await http.post(
         Uri.parse(apiUrl),
-        body: {
-          'id':
-              widget.pro.id.toString(), // Assuming id is part of the Pros model
-          'rating': _rating.toString(),
+        headers: {
+          'Content-Type': 'application/json', // Specify content-type
         },
+        body: jsonEncode({
+          'id': widget.pro.id.toString(),
+          'rating': _rating.toString(),
+        }),
       );
 
       if (response.statusCode == 200) {
@@ -135,7 +136,7 @@ class _ProsDetailsState extends State<ProsDetails> {
           ),
         );
       } else {
-        // Handle errors
+        // Handle other status codes
         showDialog(
           // ignore: use_build_context_synchronously
           context: context,

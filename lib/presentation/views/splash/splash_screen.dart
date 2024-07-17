@@ -15,6 +15,7 @@ class SplashScreen extends StatelessWidget {
         ? appRoute
         : authRoute; // Redirection basée sur la présence de l'utilisateur enregistré
 
+    // ignore: use_build_context_synchronously
     Navigator.of(context).pushNamed(
         routeToRedirect); // Redirection vers la route appropriée (appRoute ou authRoute)
   }
