@@ -43,10 +43,3 @@ app.*.map.json
 /android/app/release
 
 # 
-/windows/
-/web/
-/test/
-/linux/
-/ios/
-/android/
-/macos/
